@@ -30,7 +30,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-             <a href="<?= base_url('admin/dashboard'); ?>" class="site_title"><i class="fa fa-cogs"></i> <span>Vehicle Sales MS</span></a>
+             <a href="<?= base_url('admin/dashboard'); ?>" class="site_title"><i class="fa fa-cogs"></i> <span>Bicycle Sales</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -68,14 +68,14 @@
 
                         <ul class="nav child_menu">
                           <li><a href="<?php echo base_url() . 'admin/manufacturers';?>">Manage Manufacturer</a></li>
-                          <li><a href="<?php echo base_url() . 'admin/car_model';?>">Manage Model</a></li>
+                          <li><a href="<?php echo base_url() . 'admin/bicycle_model';?>">Manage Model</a></li>
                         </ul>
                     </li>
                     <?php endif; ?>
-                  <li><a><i class="fa fa-car"></i> Vehicles <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bicycle"></i> Bicycles <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= base_url('admin/vehicles'); ?>">All Vehicles</a></li>
-                      <li><a href="<?= base_url('admin/vehicles/soldlist'); ?>">Sold Vehicles</a></li>
+                      <li><a href="<?= base_url('admin/bicycles'); ?>">All Bicycles</a></li>
+                      <li><a href="<?= base_url('admin/bicycles/soldlist'); ?>">Sold Bicycles</a></li>
                     </ul>
                   </li>
                 </ul>

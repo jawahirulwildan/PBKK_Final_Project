@@ -6,27 +6,27 @@ class Pages extends CI_Controller {
 	{
 		parent::__construct();
 		
-		$this->load->model('model_vehicle');
+		$this->load->model('model_bicycle');
         $this->load->model('model_manufacturer');
-        $this->load->model('model_car_model');
+        $this->load->model('model_bicycle_model');
 	}
 
 	public function index()
 	{	
-		// $data['vehicles'] = $this->model_vehicle->getAll();
-		$data['vehicles'] = $this->model_vehicle->getLatest();
-		$data['featured'] = $this->model_vehicle->getFeatured();
+		// $data['bicycles'] = $this->model_bicycle->getAll();
+		$data['bicycles'] = $this->model_bicycle->getLatest();
+		$data['featured'] = $this->model_bicycle->getFeatured();
 		$data['manufacturers'] = $this->model_manufacturer->getAllManufacturers();
-		$data['models'] = $this->model_car_model->getAllModels();
+		$data['models'] = $this->model_bicycle_model->getAllModels();
 		
 		$this->parser->parse('public/view_index', $data);   
 
         // $this->load->view('public/view_index');
 	}
 
-	public function show($vehicle_id)
+	public function show($bicycle_id)
 	{
-		$data['vehicle'] = $this->model_vehicle->getById($vehicle_id);
+		$data['bicycle'] = $this->model_bicycle->getById($bicycle_id);
 		
 		$this->parser->parse('public/view_single.php', $data);
 	}

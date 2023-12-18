@@ -4,23 +4,23 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>All Vehicles</h3>
+                <h3>All Bicycles</h3>
             </div>
         </div>
         <div class="clearfix"></div>
 
         <hr>
-        <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> Add New Vehicle</a>
+        <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> Add New Bicycle</a>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
             <div class="collapse" id="collapseExample">
             <?php echo validation_errors(); ?> 
-			<?php echo form_open_multipart('admin/vehicles/add'); ?>
+			<?php echo form_open_multipart('admin/bicycles/add'); ?>
                 <fieldset>
                     <div class="row">
                         <div class="col-xs-6">
-                            <label>Vehicle Manufacturer</label>                            
+                            <label>Bicycle Manufacturer</label>                            
                                 <select class="form-control" name="manufacturer_id" id="parent_cat">
                                     {manufacturers}
                                         <option value="{id}">{manufacturer_name}</option>
@@ -28,12 +28,8 @@
                                 </select>
                         </div>
                         <div class="col-xs-6">
-                            <label>Vehicle Model</label>
-                            <select class="form-control" name="model_id" >
-                                {models}
-                                    <option value="{id}">{model_name}</option>
-                                {/models}
-                            </select>
+                            <label>Bicycle Model</label>
+                            <input type="text"class="form-control" name="model_id" placeholder="Model Sepeda" required>
                         </div>
                     </div>
                             
@@ -41,17 +37,13 @@
                         
                     <div class="row">
                         <div class="col-xs-6">
-                        <label>Vehicle Category</label>
+                        <label>Bicycle Category</label>
                             <select class="form-control" name="category" >
-                                <option value="Sedan">Sedan</option>
-                                <option value="Coupe">Coupe</option>
-                                <option value="Luxury">Luxury</option>
-                                <option value="Subcompact">Subcompact</option>
-                                <option value="Pickup-Truck">Pickup Truck</option>
-                                <option value="Compact">Compact</option>
-                                <option value="SUV">SUV</option>
-                                <option value="Sports-Car">Sports Car</option>
-                                <option value="Mini-Van">Mini-Van</option>
+                                <option value="BMX">BMX</option>
+                                <option value="Fixie">Fixie</option>
+                                <option value="Mountain Bike">Mountain Bike</option>
+                                <option value="Kids Bike">Kids Bike</option>
+                                <option value="Road Bike">Road Bike</option>
                             </select>
                         </div>
                         <div class="col-xs-6">
@@ -62,36 +54,7 @@
                     </div>
                             
                     <br>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <br>
-                            <label for="gear">Gear Type:</label>
-                            <select name="gear" id="gear" class="form-control">
-                                <option value="auto">Auto</option>
-                                <option value="manual">Manual</option>
-                            </select>
-                        </div>
-                        <div class="col-xs-6">
-                        <br>
-                            <label for="mileage">Mileage:</label>
-                            <input type="text" step="any" class="form-control" name="mileage" placeholder="Mileage(km)" required>
-                        </div>
-                    </div>
-                            
-                    <br>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <br>
-                            <input class="form-control" name="e_no" placeholder="6-Digit Engine Number" required>
-                        </div>
-                        <div class="col-xs-6">
-                            <br>
-                            <input class="form-control" name="c_no" placeholder="17-Digit Chassis Number" required>
-                        </div>
-                    </div>
-                            
-                    <br>
-                        
+                    
                     <div class="row">
                         <div class="col-xs-6">
                             <label>Add Date</label>
@@ -99,44 +62,23 @@
                         </div>
                         <div class="col-xs-6">
                             <br>
-                            <input type="number" class="form-control" name="doors" placeholder="Number of Doors" required>
+                            <input type="number" class="form-control" name="registration_year" placeholder="Registration Year (YYYY)" required>
                         </div>
                     </div>
                             
                     <br>
-
+        
                     <div class="row">
                         <div class="col-xs-6">
-                            <br>
-                            <input type="number"class="form-control" name="registration_year" placeholder="Registration Year (YYYY)" required>
-                        </div>
-                        <div class="col-xs-6">
-                            <br>
-                            <input type="number" class="form-control" name="insurance_id" placeholder="Insurance ID" required>
-                        </div>
-                    </div>
-                            
-                    <br>
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <input type="number"class="form-control" name="seats" placeholder="Number of seats" required>
-                        </div>
-                        <div class="col-xs-6">
-                            <input type="number" step="any" class="form-control" name="tank" placeholder="Tank Capacity (litre)" required>
-                        </div>
-                    </div>
-                    <br>
-                            
-                    <div class="row">
-                        <div class="col-xs-6">
-                         <input type="text"class="form-control" name="v_color" placeholder="Color" required>
+                            <input type="text"class="form-control" name="v_color" placeholder="Color" required>
                         </div>
                         <div class="col-xs-6">
                             <input type="file" class="form-control" name="image" >
                         </div>
                     </div>
-<br>
+
+                    <br>
+                    
                     <div class="row">
                         <div class="col-xs-6">
                         <label for="gear">Do you want it to be featured?</label>
@@ -147,7 +89,7 @@
                         </div>
                     </div>
                     <br>
-                    <input class="btn btn-success" type="submit" name="buttonSubmit" value="Add New Vehicle" />
+                    <input class="btn btn-success" type="submit" name="buttonSubmit" value="Add New Bicycle" />
                                                             
                 </fieldset>         
             </form>
@@ -160,7 +102,7 @@
             <div class="col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Displaying all vehicles</h2>
+                        <h2>Displaying all bicycles</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                             <li><a class="close-link"><i class="fa fa-close"></i></a></li>
@@ -170,7 +112,7 @@
                     <div class="x_content">
                         <table id="datatable-responsive" class="table table-striped table-bordered table-hover dt-responsive nowrap" cellspacing="0" width="100%">
                             <thead>
-                                 <tr>
+                                <tr>
                                     <th>#</th>
                                     <th>Model</th>
                                     <th>Manufacturer</th>
@@ -185,37 +127,37 @@
                             </thead>
                             
                             <tbody>
-                                <?php foreach($vehicles as $vehicle) : ?>
+                                <?php foreach($bicycles as $Bicycle) : ?>
                                     
-                                    <tr class="<?php if($vehicle['status'] != "available") echo 'danger'; else echo 'success'?>">
+                                    <tr class="<?php if($Bicycle['status'] != "available") echo 'danger'; else echo 'success'?>">
                                     
-                                        <td><?php echo $vehicle['vehicle_id']; ?></td>
-                                        <td><?php echo $vehicle['model_name']; ?></td>
-                                        <td><?php echo $vehicle['manufacturer_name']; ?></td>
-                                        <td><?php echo $vehicle['category']; ?></td>
-                                        <td><?php $date = new DateTime($vehicle['add_date']); echo $date->format('m/d/Y'); ?></td>
+                                        <td><?php echo $Bicycle['bicycle_id']; ?></td>
+                                        <td><?php echo $Bicycle['model_name']; ?></td>
+                                        <td><?php echo $Bicycle['manufacturer_name']; ?></td>
+                                        <td><?php echo $Bicycle['category']; ?></td>
+                                        <td><?php $date = new DateTime($Bicycle['add_date']); echo $date->format('m/d/Y'); ?></td>
                                         
-                                        <td><?php if ( $vehicle['status'] == 'available' ) { echo '<span class="badge progress-bar-success" style="">Available</span>';} else if ( $vehicle['status'] == 'sold' ) { echo '<span class="badge progress-bar-danger">Sold</span>';} else { echo '<span class="badge badge-primary">None</span>';} ?></td>
-                                        <td><?php echo $vehicle['buying_price']; ?></td>
+                                        <td><?php if ( $Bicycle['status'] == 'available' ) { echo '<span class="badge progress-bar-success" style="">Available</span>';} else if ( $Bicycle['status'] == 'sold' ) { echo '<span class="badge progress-bar-danger">Sold</span>';} else { echo '<span class="badge badge-primary">None</span>';} ?></td>
+                                        <td><?php echo $Bicycle['buying_price']; ?></td>
                                         <td width="100">
-                                            <img class="img-responsive" src="<?php echo base_url()."uploads/".$vehicle['image']; ?>"></td>
+                                            <img class="img-responsive" src="<?php echo base_url()."uploads/".$Bicycle['image']; ?>"></td>
                                         <td>
-                                            <?php if($vehicle['status']=="available") : ?>
-                                                <?php echo form_open('admin/vehicles/sell/'); ?>
-                                                    <input type="hidden" name="vehicle_id" value="<?php echo $vehicle['vehicle_id']; ?>">
+                                            <?php if($Bicycle['status']=="available") : ?>
+                                                <?php echo form_open('admin/bicycles/sell/'); ?>
+                                                    <input type="hidden" name="bicycle_id" value="<?php echo $Bicycle['bicycle_id']; ?>">
                                                     <button class="btn btn-xs btn-primary" type="submit" name="btn-sell">Sell</button>
                                                 </form> 
                                             <?php endif ?>
                                                     
                                             <?php if ($this->session->userdata('type') =="admin") : ?>
                                                 
-                                                <?php echo form_open('admin/Vehicles/DeleteVehicle/'); ?>
-                                                    <input type="hidden" name="vehicle_id" value="<?php echo $vehicle['vehicle_id']; ?>">
-                                                    <button onclick="return confirm('Records of this Vehicle will be deleted, continue?')" class="btn btn-xs btn-danger" type="submit" name="btn-delete">Delete</button>
+                                                <?php echo form_open('admin/Bicycles/DeleteBicycle/'); ?>
+                                                    <input type="hidden" name="bicycle_id" value="<?php echo $Bicycle['bicycle_id']; ?>">
+                                                    <button onclick="return confirm('Records of this Bicycle will be deleted, continue?')" class="btn btn-xs btn-danger" type="submit" name="btn-delete">Delete</button>
                                                 </form>             
                                             <?php endif; ?>
                                         </td>
-                                        <td><?php if($vehicle['sold_date']=== NULL){ echo 'Not Sold'; }else{ $date = new DateTime($vehicle['sold_date']); echo $date->format('m/d/Y'); }?></td>
+                                        <td><?php if($Bicycle['sold_date']=== NULL){ echo 'Not Sold'; }else{ $date = new DateTime($Bicycle['sold_date']); echo $date->format('m/d/Y'); }?></td>
                                                     
                                     </tr>
                                 <?php endforeach; ?>     
@@ -331,7 +273,7 @@
     
     $("#parent_cat").change(function() {
         $(this).after();
-        $.get('<?php echo base_url(); ?>controller_vehicle/getsub/' + $(this).val(), function(data) {
+        $.get('<?php echo base_url(); ?>controller_Bicycle/getsub/' + $(this).val(), function(data) {
             $("#sub_cat").html(data);
             $('#loader').slideUp(200, function() {
                 $(this).remove();

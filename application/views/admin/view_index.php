@@ -8,8 +8,8 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
 				  <div class="row tile_count"> 
 					<div class="col-md-3 tile_stats_count">
-						  <span class="count_top" style="font-size:19px;"><i class="fa fa-car"></i> <b>Total Vehicles</b> </span>
-						  <div class="count"><?php echo count($vehicles); ?></div>
+						  <span class="count_top" style="font-size:19px;"><i class="fa fa-car"></i> <b>Total Bicycles</b> </span>
+						  <div class="count"><?php echo count($bicycles); ?></div>
 					</div>
 					<div class="col-md-3 tile_stats_count">
 						  <span class="count_top" style="font-size:19px;"><i class="fa fa-user"></i> <b>Employees</b> </span>
@@ -23,8 +23,8 @@
 					  	<span class="count_top" style="font-size:19px;"><i class="fa fa-money"></i><b> Total Earnings <small>(Rs)</small></b></span>
 					  	<div class="count">
 					  		<?php $price = 0; ?>
-					  		<?php foreach($vehicles as $vehicle) : ?>
-					  			<?php $price += $vehicle['selling_price']; ?>
+					  		<?php foreach($bicycles as $bicycle) : ?>
+					  			<?php $price += $bicycle['selling_price']; ?>
 					  		<?php endforeach; ?>
 					  		<?= '' . $price ?>
 					  	</div>
@@ -37,7 +37,7 @@
         	<div class="col-md-6 col-xs-12">
               	<div class="x_panel tile fixed_height_320">
                 	<div class="x_title">
-                  		<h2>Vehicle Count in Manufacturers</h2>
+                  		<h2>Bicycle Count in Manufacturers</h2>
 	                  		<ul class="nav navbar-right panel_toolbox">
 	                    	<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
 	                        <li><a class="close-link"><i class="fa fa-close"></i></a></li>
@@ -75,7 +75,7 @@
             <div class="col-md-6 col-xs-12">
               	<div class="x_panel tile fixed_height_320">
                 	<div class="x_title">
-                  		<h2>Sold Vehicle Count in Manufacturers</h2>
+                  		<h2>Sold Bicycle Count in Manufacturers</h2>
 	                  		<ul class="nav navbar-right panel_toolbox">
 	                    	<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
 	                        <li><a class="close-link"><i class="fa fa-close"></i></a></li>

@@ -4,7 +4,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Sold Vehicles</h3>
+                <h3>Sold Bicycles</h3>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -15,7 +15,7 @@
             <div class="col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Displaying sold vehicles data</h2>
+                        <h2>Displaying sold bicycles data</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                             <li><a class="close-link"><i class="fa fa-close"></i></a></li>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="x_content">
                         <div style="padding-left: 25%">
-                <div style="display:inline">Sold Vehicle Filter</div>
+                <div style="display:inline">Sold Bicycle Filter</div>
                     <div class="input-append date datepicker divDatePicker inline" id="datepicker" style="margin:0px;padding:0px;display:inline">
                     <input type="text" class="datepicker input-small validation rightBorderNone otherTabs" id="fromDate" name="displayDate" placeholder="From Date" />
                     <button class="btn leftBorderNone" type="button"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -46,33 +46,27 @@
                                     <th>Price &amp; Profit</th>
                                     <th>Date of Sale</th>
                                     <th>Warranty End</th>
-                                    <th>Insurance</th>
-                                    <th>Engine#</th>
 									<th></th>
                                     
                                 </tr>
                             </thead>
                             
                             <tbody>
-                                <?php foreach($cus as $vehicle){?>
+                                <?php foreach($cus as $bicycle){?>
                                 
-                                <td><?php echo $vehicle['c_id']; ?></td>
-                                <td><?php echo "Name: ".$vehicle['cf_name']." ".$vehicle['cl_name']."<br>Email :".$vehicle['c_email']."<br>Phone: ".$vehicle['c_mobile']; ?></td>
-                                <td><?php echo $vehicle['manufacturer_name']; ?></td>
-                                <td><?php echo $vehicle['model_name']; ?></td>
-                                <td><?php echo "Price Rs: ".$vehicle['buying_price']."<br>Sold Rs: ".$vehicle['selling_price']."<br>Profit Rs: ".($vehicle['selling_price']-$vehicle['buying_price']); ?></td>
-                                <td><?php $date = new DateTime($vehicle['w_start']); echo $date->format('m/d/Y'); ?></td>
-                                <td><?php $date = new DateTime($vehicle['w_end']); echo $date->format('m/d/Y'); ?></td>
-                                
-                            
-                            
-                            <td><?php echo $vehicle['insurance_id']; ?></td>
-                            <td><?php echo $vehicle['engine_no']; ?></td>
+                                <td><?php echo $bicycle['c_id']; ?></td>
+                                <td><?php echo "Name: ".$bicycle['cf_name']." ".$bicycle['cl_name']."<br>Email :".$bicycle['c_email']."<br>Phone: ".$bicycle['c_mobile']; ?></td>
+                                <td><?php echo $bicycle['manufacturer_name']; ?></td>
+                                <td><?php echo $bicycle['model_name']; ?></td>
+                                <td><?php echo "Price Rp: ".$bicycle['buying_price']."<br>Sold Rp: ".$bicycle['selling_price']."<br>Profit Rp: ".($bicycle['selling_price']-$bicycle['buying_price']); ?></td>
+                                <td><?php $date = new DateTime($bicycle['w_start']); echo $date->format('m/d/Y'); ?></td>
+                                <td><?php $date = new DateTime($bicycle['w_end']); echo $date->format('m/d/Y'); ?></td>
+
                             <td>
                                     <?php if ($this->session->userdata('type') == "admin") : ?>
-                                    <?php echo form_open('admin/vehicles/DeleteCustomer/'); ?>
-                                        <input type="hidden" name="c_id" value="<?php echo $vehicle['c_id']; ?>">
-                                        <input type="hidden" name="v_id" value="<?php echo $vehicle['vehicle_id']; ?>">
+                                    <?php echo form_open('admin/bicycles/DeleteCustomer/'); ?>
+                                        <input type="hidden" name="c_id" value="<?php echo $bicycle['c_id']; ?>">
+                                        <input type="hidden" name="v_id" value="<?php echo $bicycle['bicycle_id']; ?>">
                                         <button onclick="return confirm('Records of this Customer will be deleted, continue?')" class="btn btn-xs btn-danger" type="submit" name="btn-delete">Delete</button>
                                     </form>
                                 <?php endif; ?>

@@ -1,6 +1,6 @@
 <?php $this->load->view('public/partials/view_public_header.php'); ?>
 	
-	{vehicle}
+	{bicycle}
 	<!-- grow -->
 	<div class="grow">
 		<div class="container">
@@ -48,26 +48,6 @@
 									<span>{category}</span>
 								</li>
 								<li class="size-in">
-									Mileage:
-									<span>{mileage}</span>
-								</li>
-								<li class="size-in">
-									Gear:
-									<span>{gear}</span>
-								</li>
-								<li class="size-in">
-									Doors:
-									<span>{doors}</span>
-								</li>
-								<li class="size-in">
-									Seats:
-									<span>{seats}</span>
-								</li>
-								<li class="size-in">
-									Fuel:
-									<span>{tank} Litre</span>
-								</li>
-								<li class="size-in">
 									Registration Year:
 									<span>{registration_year}</span>
 								</li>
@@ -80,5 +60,5 @@
 						<div class="clearfix"> </div>
 					</div>
 				</div>
-{/vehicle}
+{/bicycle}
 <?php $this->load->view('public/partials/view_public_footer.php'); ?>

@@ -10,21 +10,21 @@ class Dashboard extends CI_Controller {
             redirect('login');
         }
 		
-		$this->load->model('model_vehicle');
+		$this->load->model('model_bicycle');
         $this->load->model('model_manufacturer');
-        $this->load->model('model_car_model');
+        $this->load->model('model_bicycle_model');
         $this->load->model('model_employee');
 	}
 
 	public function index()
 	{
 
-        $data['vehicles'] = $this->model_vehicle->getAll();
-        $data['customers'] = $this->model_vehicle->customerList();
-        $data['manufacturers_group'] = $this->model_vehicle->getAllByManufacturer();
-        $data['manufacturers_group_sold'] = $this->model_vehicle->getAllByManufacturerSold();
+        $data['bicycles'] = $this->model_bicycle->getAll();
+        $data['customers'] = $this->model_bicycle->customerList();
+        $data['manufacturers_group'] = $this->model_bicycle->getAllByManufacturer();
+        $data['manufacturers_group_sold'] = $this->model_bicycle->getAllByManufacturerSold();
         
-        // $data['vehicle_by_month'] = $this->model_vehicle->get_vehicle_by_month();
+        // $data['bicycle_by_month'] = $this->model_bicycle->get_bicycle_by_month();
 
         $data['employees'] = $this->model_employee->getAll();
     	$data['user'] = $this->session->userdata;

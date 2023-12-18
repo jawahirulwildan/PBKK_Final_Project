@@ -22,7 +22,7 @@
                         <h4 class="modal-title" id="gridSystemModalLabel">Add new Model</h4>
                     </div>
                 <div class="modal-body">
-                    <?php echo form_open_multipart('admin/car_model/addModel'); ?>
+                    <?php echo form_open_multipart('admin/bicycle_model/addModel'); ?>
                             <fieldset>
                                 <div class="form-group">
                                     <label for="model_name">Model Name:</label>
@@ -38,7 +38,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="model_description">Car Description:</label>
+                                    <label for="model_description">Bicycle Description:</label>
                                     <textarea name="model_description" id="model_description"  rows="10" class="form-control summernote"></textarea>
                                 </div>
                             
@@ -59,7 +59,7 @@
             <div class="col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Available Car Models</h2>
+                        <h2>Available Bicycle Models</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                             <li><a class="close-link"><i class="fa fa-close"></i></a></li>
@@ -90,7 +90,7 @@
                                         <td>
                                             <ul class="list-inline">
                                               <!--  <li><a href="#" class="btn btn-primary btn-xs">Edit</a></li>  -->
-                                                <li><a href="<?= base_url('admin/car_model/deleteModel/{id}'); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete?')">Delete</a></li>
+                                                <li><a href="<?= base_url('admin/bicycle_model/deleteModel/{id}'); ?>" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete?')">Delete</a></li>
                                             </ul>
                                         </td>
                                         

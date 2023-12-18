@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class model_car_model extends CI_Model {
+class model_bicycle_model extends CI_Model {
 
 	public function getAllmodels()
 	{

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Vehicles extends CI_Controller {
+class Bicycles extends CI_Controller {
 
 	public function __construct()
 	{
@@ -9,32 +9,32 @@ class Vehicles extends CI_Controller {
             redirect('login');
         }
 		
-		$this->load->model('model_vehicle');
+		$this->load->model('model_bicycle');
         $this->load->model('model_manufacturer');
-        $this->load->model('model_car_model');
+        $this->load->model('model_bicycle_model');
 	}
 
 	public function index()
 	{
         $data['udata']=$this->session->userdata;
-        $data['vehicles'] = $this->model_vehicle->getAll();
+        $data['bicycles'] = $this->model_bicycle->getAll();
         $data['manufacturers'] = $this->model_manufacturer->getAllManufacturers();
-        $data['models'] = $this->model_car_model->getAllModels();
+        $data['models'] = $this->model_bicycle_model->getAllModels();
         
-        //$this->load->view('view_vehicle', $data); 
-        $this->parser->parse('admin/view_vehicle', $data);   
+        //$this->load->view('view_bicycle', $data); 
+        $this->parser->parse('admin/view_bicycle', $data);   
     }
 
 
 	public function sell()
 	{
         if ($this->input->server('REQUEST_METHOD') == 'POST'){	
-            $cid = $this->input->post('vehicle_id');
+            $cid = $this->input->post('bicycle_id');
             $cdata['cid'] = $cid;
             if(!$this->input->post('buttonSubmits'))
     		{
     			$data['message'] = '';
-                //$data['vRow'] = $this->model_vehicle->get($cid);
+                //$data['vRow'] = $this->model_bicycle->get($cid);
                 $this->load->view('admin/view_sell', $cdata);
     		}
             else{
@@ -44,10 +44,10 @@ class Vehicles extends CI_Controller {
                 $this->form_validation->set_rules('c_mobile', 'Mobile', 'required|trim');
                 $this->form_validation->set_rules('s_price', 'Selling Price', 'required|numeric|greater_than[1]');
                 $this->form_validation->set_rules('w_end', 'Warranty End date', 'required');
-				$this->form_validation->set_rules('v_id', 'Vehicle Id', 'required');
+				$this->form_validation->set_rules('v_id', 'Bicycle Id', 'required');
                 
                 if ($this->form_validation->run() == FALSE) {
-                    $data['vRow'] = $this->model_vehicle->get($cid);
+                    $data['vRow'] = $this->model_bicycle->get($cid);
                     $this->load->view('admin/view_sell', $data);
                 }
                 else {
@@ -62,13 +62,13 @@ class Vehicles extends CI_Controller {
                     $payment_type = $this->input->post('payment_type');
                     $c_pass = "1234";
 
-                    $this->model_vehicle->sell($v_id,$cf_name,$cl_name,$c_email,$s_price,$c_mobile,$w_start,$w_end,$payment_type,$c_pass);
-                    redirect(base_url('admin/vehicles'));
+                    $this->model_bicycle->sell($v_id,$cf_name,$cl_name,$c_email,$s_price,$c_mobile,$w_start,$w_end,$payment_type,$c_pass);
+                    redirect(base_url('admin/bicycles'));
                 }
             }
         }
         else {
-            redirect(base_url('admin/vehicles'));
+            redirect(base_url('admin/bicycles'));
         }
 	}
 
@@ -95,8 +95,8 @@ class Vehicles extends CI_Controller {
 				
 				if($this->form_validation->run() == FALSE)
 				{
-					//$data['vRow'] = $this->model_vehicle->get($cid);
-                    $this->load->view('admin/view_vehicle');
+					//$data['vRow'] = $this->model_bicycle->get($cid);
+                    $this->load->view('admin/view_bicycle');
 				}
 				else{
 					
@@ -132,30 +132,30 @@ class Vehicles extends CI_Controller {
             $data = $this->upload->data('image');
             $image= $data['file_name']; 
 			
-            $this->model_vehicle->insert($featured,$image,$manufacturer_name,$model_name,$category,$b_price,$mileage,$add_date,$status,$registration_year,$insurance_id,$gear,$doors,$seats,$tank,$e_no,$c_no,$u_id,$v_color);
-			$this->session->set_flashdata('message','Vehicle Successfully Created.');
-			redirect(base_url('admin/vehicles'));
+            $this->model_bicycle->insert($featured,$image,$manufacturer_name,$model_name,$category,$b_price,$mileage,$add_date,$status,$registration_year,$insurance_id,$gear,$doors,$seats,$tank,$e_no,$c_no,$u_id,$v_color);
+			$this->session->set_flashdata('message','Bicycle Successfully Created.');
+			redirect(base_url('admin/bicycles'));
 		
 			}
 		}
 		else{
-		redirect(base_url('admin/vehicles'));
+		redirect(base_url('admin/bicycles'));
 		}
 	}
 
 
 
-	public function DeleteVehicle()
+	public function DeleteBicycle()
 	{
         if ($this->input->server('REQUEST_METHOD') == 'POST'){	
              
-            $id = $this->input->post('vehicle_id');
-            $this->model_vehicle->delete($id);
-			$this->session->set_flashdata('message','Vehicle Successfully Deleted.');
-            redirect(base_url('admin/vehicles'));
+            $id = $this->input->post('bicycle_id');
+            $this->model_bicycle->delete($id);
+			$this->session->set_flashdata('message','Bicycle Successfully Deleted.');
+            redirect(base_url('admin/bicycles'));
         }
         else {
-            redirect(base_url('admin/vehicles'));
+            redirect(base_url('admin/bicycles'));
 	    }
     }
         
@@ -165,18 +165,18 @@ class Vehicles extends CI_Controller {
             $v_id= $this->input->post('v_id');
             $c_id= $this->input->post('c_id');
                
-            $this->model_vehicle->deletecustomer($c_id,$v_id);
+            $this->model_bicycle->deletecustomer($c_id,$v_id);
 			$this->session->set_flashdata('message','Customer Successfully Created.');
-            redirect(base_url('admin/vehicles/soldlist'));
+            redirect(base_url('admin/bicycles/soldlist'));
         }
         else{
-            redirect(base_url('admin/vehicles/soldlist'));
+            redirect(base_url('admin/bicycles/soldlist'));
         }
 	}
 
     public function soldList()
     {   
-        $data['cus'] = $this->model_vehicle->customerList();
+        $data['cus'] = $this->model_bicycle->customerList();
         $this->load->view('admin/view_sold', $data);     
     }
 }

@@ -29,7 +29,7 @@
 				<li>
 					
 					<div class="banner-text">
-						<h3>Find your vehicles today!   </h3>
+						<h3>Find your bicycles today!   </h3>
 						<p>VSMS offers a 7-day, 250-mile Buy Back Guarantee. Contact us today to learn more about it!</p>
 						
 					</div>
@@ -64,7 +64,7 @@
 				<h2>Sepeda Terkini</h2>
 				<?php foreach($featured as $feature) : ?>
 					<div class="col-md-4 men">
-						<a href="<?php echo base_url('pages/show') . '/' . $feature['vehicle_id']; ?> " class="b-link-stripe b-animate-go  thickbox">
+						<a href="<?php echo base_url('pages/show') . '/' . $feature['bicycle_id']; ?> " class="b-link-stripe b-animate-go  thickbox">
 							<img style="height: 260px;" class="img-responsive" src="<?= base_url('uploads'); ?>/<?php echo $feature['image']; ?>" alt="">
 							<div class="b-wrapper">
 								<h3 class="b-animate b-from-top top-in   b-delay03 ">
@@ -77,12 +77,12 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="content-top">
-				<h1>3 Sepeda Baru</h1>
+				<h1>Sepeda Baru</h1>
 				
 				<div class="grid-in">
-					{vehicles}
+					{bicycles}
 						<div class="col-md-3 grid-top simpleCart_shelfItem">
-							<a href="<?= base_url(); ?>pages/show/{vehicle_id}" class="b-link-stripe b-animate-go  thickbox">
+							<a href="<?= base_url(); ?>pages/show/{bicycle_id}" class="b-link-stripe b-animate-go  thickbox">
 							<img class="img-responsive" src="<?= base_url('uploads/'); ?>/{image}" alt="">
 								<div class="b-wrapper">
 									<h3 class="b-animate b-from-left    b-delay03 ">
@@ -92,9 +92,9 @@
 								</div>
 							</a>
 							
-							<p><a href="<?= base_url(); ?>pages/show/{vehicle_id}">{model_name}</a></p>
+							<p><a href="<?= base_url(); ?>pages/show/{bicycle_id}">{model_name}</a></p>
 						</div>
-					{/vehicles}
+					{/bicycles}
 					<div class="clearfix"> </div>
 				</div>
 			</div>
