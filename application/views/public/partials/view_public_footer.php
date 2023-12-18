@@ -6,7 +6,7 @@
 		</div>
 	</div>
 	<div class="footer-class w3-agile" style="background-color: #85586F;">
-		<p>© <?php echo date("Y"); ?> Vehicle Sales Management System</p>
+		<p>© <?php echo date("Y"); ?> Sistem Penjualan Sepeda PRIMABIKE</p>
 	</div>
 </div>
 </body>

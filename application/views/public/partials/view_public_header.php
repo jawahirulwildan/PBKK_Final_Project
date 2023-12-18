@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>VSMS</title>
+<title>PrimaBike</title>
 <link href="<?= base_url('assets/vendors/bootstrap/dist/css/bootstrap.min.css'); ?> " rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<?= base_url('assets/js/jquery.min.js'); ?>"></script>
@@ -52,10 +52,10 @@
 				<div class="logo">
 					<h1><a href="<?= base_url(); ?>"><img src="./assets/images/sepedalogo.png" width="95" alt=""></a></h1>
 				</div>
-		  <div class=" h_menu4">
+		    <div class=" h_menu4">
 				<ul class="memenu skyblue">
 					<li><a class="color8" href="<?= base_url(); ?>">Home</a></li>	
-					<li><a class="color4" href="<?= base_url('about'); ?>">About</a></li>
+					<li><a class="color4" href="<?= base_url('about'); ?>">About Us</a></li>
 					<li><a class="color4" href="<?php echo base_url('login'); ?>">Login</a></li>
 			  </ul> 
 			</div>

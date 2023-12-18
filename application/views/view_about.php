@@ -1,87 +1,126 @@
 <?php $this->load->view('public/partials/view_public_header.php'); ?>
+
+<style>
+    body {
+        background-color: #F8EDE3;
+    }
+    .banner {
+        background: url('<?= base_url('assets/images/newbanner.jpg'); ?>') center center no-repeat;
+        background-size: cover;
+        height: 560px;
+    }
+    .about-container {
+        background-color: #D0B8A8;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+	.contact-container {
+        background-color: #D0B8A8;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+	.peta-container {
+        background-color: #D0B8A8;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		height: 600px;
+    }
+	.footer {
+        margin-top: 20px;
+    }
+</style>
+
 <div class="banner">
-	<div class="container">
-		<script src="<?= base_url('assets/js/responsiveslides.min.js'); ?>"></script>
-		<script>
-		$(function () {
-		$("#slider").responsiveSlides({
-			auto: true,
-			nav: true,
-			speed: 500,
-		namespace: "callbacks",
-		pager: true,
-		});
-		});
-		</script>
-		<div  id="top" class="callbacks_container">
-			<ul class="rslides" id="slider">
-				<li>
-					
-					<div class="banner-text">
-						<h3>Find your vehicles today!   </h3>
-						<p>VSMS offers a 7-day, 250-mile Buy Back Guarantee. Contact us today to learn more about it!</p>
-						
-					</div>
-					
-				</li>
-				<li>
-					
-					<div class="banner-text">
-						<h3>No Haggle Pricing  </h3>
-						<p>No need to brush up on your bargaining skill! We believe in offering a low price instead of making you negotiate for it. After all, everyone deserves the same great no-haggle pricing. Each low price is yours for the taking.</p>
-						
-					</div>
-					
-				</li>
-				<li>
-					<div class="banner-text">
-						<h3>Home Services Bring the Cars to You</h3>
-						<p>For your convenience, our dealers have expanded the ways you can shop for a new or used car from the comfort of home</p>
-						
-					</div>
-					
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div class="container">
+        <script src="<?= base_url('assets/js/responsiveslides.min.js'); ?>"></script>
+        <script>
+            $(function () {
+                $("#slider").responsiveSlides({
+                    auto: true,
+                    nav: true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    pager: true,
+                });
+            });
+        </script>
+        <div id="top" class="callbacks_container">
+            <ul class="rslides" id="slider">
+                <li>
+                    <div class="banner-text">
+                        <h3>Temukan Sepedamu Hari Ini!</h3>
+                        <p>Di PRIMABIKE, kami dengan bangga menawarkan berbagai pilihan sepeda berkualitas tinggi untuk memenuhi kebutuhan pengendara sepeda dari segala tingkatan. Jelajahi koleksi kami dan temukan sepeda yang sesuai dengan gaya dan kebutuhan Anda. Dengan Jaminan Pembelian Kembali, Anda dapat berbelanja dengan percaya diri!</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-text">
+                        <h3>Tidak Perlu Tawar-menawar!</h3>
+                        <p>PRIMABIKE mengusung prinsip harga yang jelas dan transparan. Kami tidak memerlukan proses tawar-menawar karena kami telah menyajikan harga yang kompetitif untuk setiap sepeda yang kami jual. Kami percaya setiap pelanggan berhak mendapatkan harga yang adil tanpa perlu bernegosiasi. Di PRIMABIKE, setiap harga rendah adalah milik Anda untuk diambil.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-text">
+                        <h3>Pelayanan Instimewa Membawakan Sepeda Untuk Anda!</h3>
+                        <p>PRIMABIKE tidak hanya menjual sepeda berkualitas tinggi, tetapi juga memberikan pengalaman berbelanja yang istimewa. Nikmati kenyamanan berbelanja sepda baru atau bekas dari kenyamanan rumah Anda. Tim kami yang ramah dan berpengetahuan akan membantu Anda menemukan sepeda yang sesuai dengan kebutuhan dan preferensi Anda.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<body>
 
-    <h1>Welcome to Our Motorcycle Sales</h1>
-
+<div class="container about-container">
+    <h2 class="text-center">Tentang Kami</h2>
     <p>
-        We are passionate about providing the best motorcycles for our customers. 
-        Our dedicated team is committed to delivering quality and excellent service in every transaction.
+        Selamat datang di PRIMABIKE, tempat terbaik untuk menemukan sepeda berkualitas tinggi dan layanan pelanggan yang luar biasa.
+        Kami memiliki misi untuk menyediakan pilihan sepeda terbaik dengan harga yang kompetitif, tanpa perlu melakukan tawar-menawar.
+        Dengan pengalaman bertahun-tahun di industri sepeda, kami bangga menjadi destinasi utama untuk para pecinta sepeda.
     </p>
-
-    <h2>Popular Motorcycle Models</h2>
-
-    <?php
-    // Array of motorcycle models
-    $motorcycleModels = [
-        'Honda CBR600RR',
-        'Yamaha YZF-R1',
-        'Suzuki GSX-R1000',
-        'Kawasaki Ninja ZX-10R',
-        'Ducati Panigale V4',
-        'Harley-Davidson Street Glide',
-    ];
-    ?>
-
-    <ul>
-        <?php foreach ($motorcycleModels as $model): ?>
-            <li><?php echo $model; ?></li>
-        <?php endforeach; ?>
-    </ul>
-
     <p>
-        Whether you're a seasoned rider or a beginner, we have the perfect motorcycle for you. 
-        Explore our showroom to discover the latest models and find the one that suits your style.
+        Di PRIMABIKE, kami tidak hanya menjual sepeda, tetapi kami juga berkomitmen untuk memberikan pengalaman berbelanja yang istimewa.
+        Tim kami yang berpengetahuan luas akan membantu Anda menemukan sepeda yang sesuai dengan kebutuhan dan gaya hidup Anda.
+        Dengan Jaminan Pembelian Kembali, kami memberikan kepercayaan kepada pelanggan untuk berbelanja dengan nyaman.
     </p>
+    <p>
+        Terima kasih telah memilih PRIMABIKE sebagai mitra sepeda Anda. Kami berkomitmen untuk terus memberikan produk berkualitas tinggi
+        dan layanan yang memuaskan. Selamat berbelanja di PRIMABIKE!
+    </p>
+</div>
 
-    <!-- Add any additional content or features here -->
+<div class="container contact-container">
+    <h2 class="text-center">Kontak Kami</h2>
+    <p>
+        Untuk pertanyaan lebih lanjut atau bantuan, jangan ragu untuk menghubungi tim kami. Kami siap membantu Anda dengan senang hati!
+    </p>
+	<p>
+        WA/Call : +62 858-5260-1479 a.n. Jawahirul Wildan
+    </p>
+	<p>
+        WA/Call : +62 812-53369-4369 a.n. Urdhanaka
+    </p>
+	<p>
+        WA/Call : +62 811-3303-924 a.n. Achmad Khosyi'
+    </p>
+	<p>
+        Sosial Media Kami :
+    </p>
+	<p><a href="https://www.instagram.com/jawahirulwildan?igshid=OGQ5ZDc2ODk2ZA=="><i class="facebok"> </i></a></p>
+	<p><a href="https://www.instagram.com/jawahirulwildan?igshid=OGQ5ZDc2ODk2ZA=="><i class="goog"> </i></a></p>
+</div>
 
-</body>
-</html>
+<div class="container peta-container">
+	<h2 class="text-center">Lokasi Kami</h2>
+	<iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d394.3143663632098!2d112.78708457613627!3d-7.282796924999578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbbf2670a60d%3A0x254fbfa8b1fcb08f!2sKos%20Gebang%20Muslim!5e0!3m2!1sen!2sid!4v1702871303423!5m2!1sen!2sid" 
+        style="border:0; width: 100%; height: 95%; margin: 0;"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
 
 <?php $this->load->view('public/partials/view_public_footer.php'); ?>
